@@ -27,6 +27,10 @@ jobs:
             generators: "Unix Makefiles"
             build_dir: 'build'
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+    
       - name: Build dependencies
         shell: bash
         run: |
