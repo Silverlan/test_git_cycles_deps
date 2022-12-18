@@ -36,4 +36,5 @@ jobs:
         run: |
           mkdir src
           mkdir dst
+          echo "this is a line" > src/test.ptx
           cp "src/*.ptx" "dst/"
