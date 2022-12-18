@@ -34,7 +34,6 @@ jobs:
       - name: Build dependencies
         shell: bash
         run: |
-          deps_dir="deps"
-          sourceLocation="$deps_dir/lib/source"
-          installLocation="$deps_dir/lib/Linux_x86_64"
-          bash install_deps.sh --build-boost --build-oiio --build-tbb --build-alembic --build-embree --build-ocio --build-openvdb --build-osl --build-osd --build-oidn --build-usd --with-embree --with-oidn --source $sourceLocation --install $installLocation --no-confirm --no-sudo
+          mkdir src
+          mkdir dst
+          cp "src/*.ptx" "dst/"
