@@ -28,14 +28,22 @@ jobs:
             generators: "Visual Studio 16 2022"
             build_dir: 'build'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
-    
-      - name: Build dependencies
+
+      - name: Test
         shell: bash
         run: |
           mkdir src
           mkdir dst
           echo "this is a line" > src/test.ptx
-          cp "src/*.ptx" "dst/"
+          #cp "src/*.ptx" "dst/"
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            shutil.copy2("src/test.ptx","dst2/")
