@@ -47,4 +47,4 @@ jobs:
         with:
           script: |
             import shutil
-            shutil.copy2("src/test.ptx","dst2/")
+            shutil.copy2("src/test.ptx","dst/")
